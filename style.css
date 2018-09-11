@@ -27,5 +27,18 @@ body {
 }
 
 .svg-container {
-  width: 100px;
+  border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+}
+
+.svg-container:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.thumbnail-column {
+  column-width: 100px;
 }
