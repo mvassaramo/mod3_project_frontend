@@ -28,7 +28,6 @@ const imageContainer = document.querySelector('#image-container')
     container.addEventListener('click', event => {
       imageContainer.dataset.id = container.dataset.id
       imageContainer.innerHTML = container.innerHTML
-      imageContainer.
     })
 
     templateContainer.appendChild(templateEl)
