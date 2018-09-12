@@ -49,6 +49,54 @@ document.addEventListener('DOMContentLoaded', () => {
     currentColor = redButton.value
   })
 
+  const yellowButton = document.querySelector('#yellow')
+  yellowButton.addEventListener('click', event => {
+    currentColor = yellowButton.value
+  })
+
+  const greenButton = document.querySelector('#green')
+  greenButton.addEventListener('click', event => {
+    currentColor = greenButton.value
+  })
+
+  const blueButton = document.querySelector('#blue')
+  blueButton.addEventListener('click', event => {
+    currentColor = blueButton.value
+  })
+
+  const purpleButton = document.querySelector('#purple')
+  purpleButton.addEventListener('click', event => {
+    currentColor = purpleButton.value
+  })
+  const fuchsiaButton = document.querySelector('#fuchsia')
+  fuchsiaButton.addEventListener('click', event => {
+    currentColor = fuchsiaButton.value
+  })
+  const aquaButton = document.querySelector('#aqua')
+  aquaButton.addEventListener('click', event => {
+    currentColor = aquaButton.value
+  })
+  const navyButton = document.querySelector('#navy')
+  navyButton.addEventListener('click', event => {
+    currentColor = navyButton.value
+  })
+  const lavenderButton = document.querySelector('#lavender')
+  lavenderButton.addEventListener('click', event => {
+    currentColor = lavenderButton.value
+  })
+  const maroonButton = document.querySelector('#maroon')
+  maroonButton.addEventListener('click', event => {
+    currentColor = maroonButton.value
+  })
+  const orangeButton = document.querySelector('#orange')
+  orangeButton.addEventListener('click', event => {
+    currentColor = orangeButton.value
+  })
+  const blackButton = document.querySelector('#black')
+  blackButton.addEventListener('click', event => {
+    currentColor = blackButton.value
+  })
+
   document.getElementById('btn').addEventListener('click', function () {
     const node = document.getElementById('image-container')
 
