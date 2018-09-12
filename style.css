@@ -1,23 +1,23 @@
 * {
   padding: 0;
-  margin: 0;
+  margin: 10px;
 }
 
 body {
   background: white;
-
-  #logo {
-    width: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   h1 {
     color: #ff6f69;
   }
 
 
+}
+
+#logo {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blue {
@@ -34,9 +34,10 @@ body {
 
 
 #image-container {
-  border: solid 2px black;
+  border: solid 1px black;
   width: 80%;
   height: 600px;
+  border-radius: 10px;
 }
 
 #image-container svg {
@@ -74,7 +75,7 @@ body {
 }
 
 .svg-container:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(31,65,138,0.24), 0 17px 50px 0 rgba(31,65,138,0.19);
 }
 
 .thumbnail-column {
@@ -85,6 +86,7 @@ body {
   width: calc(50% - 10px);
   min-height: 90px;
   margin: 5px;
+  border-radius: 12px;
 }
 
 
@@ -119,17 +121,21 @@ body {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #c0ded9;
+    background-color: rgb(244,197,5);
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
+    width: 150px;
+    height: 60px;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 0px;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -140,6 +146,7 @@ body {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin: 0px;
 }
 
 /* Links inside the dropdown */

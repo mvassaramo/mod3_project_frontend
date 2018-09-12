@@ -5,19 +5,61 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.querySelector('#button-container')
   let currentColor
   const colourPalette = [
-    "#ff3300",
-    "#ffff00",
-    "#008000",
-    "#0000ff",
-    "#800080",
-    "#ff00ff",
-    "#00ffff",
-    "#000080",
-    "#e6e6fa",
-    "#800000",
-    "#ffa500",
-    "#000000"
+    "#001f3f",
+    "#001f3f",
+    "#7FDBFF",
+    "#39CCCC",
+    "#3D9970",
+    "#2ECC40",
+    "#01FF70",
+    "#FFDC00",
+    "#FF851B",
+    "#FF4136",
+    "#85144b",
+    "#F012BE",
+    "#B10DC9",
+    "#111111",
+    "#AAAAAA",
+    "#DDDDDD",
+    "#fff"
   ]
+  const paletteSelection = [{name: 'Standard', colours: ["#001f3f",
+  "#001f3f",
+  "#7FDBFF",
+  "#39CCCC",
+  "#3D9970",
+  "#2ECC40",
+  "#01FF70",
+  "#FFDC00",
+  "#FF851B",
+  "#FF4136",
+  "#85144b",
+  "#F012BE",
+  "#B10DC9",
+  "#111111",
+  "#AAAAAA",
+  "#DDDDDD",
+  "#fff"]},
+  {name: 'Rainbow', colours: ["#9e0142",
+  "#d53e4f",
+  "#f46d43",
+  "#fdae61",
+  "#fee08b",
+  "#ffffbf",
+  "#e6f598",
+  "#abdda4",
+  "#66c2a5",
+  "#3288bd",
+  "#5e4fa2"]}]
+
+
+
+
+
+
+
+
+
 
   function getTemplates () {
     return fetch(endPoint)
@@ -47,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   imageContainer.addEventListener('click', event => {
-    if (event.target.nodeName === 'path' || event.target.nodeName === 'polygon' ) {
+    if (event.target.nodeName === 'path' || event.target.nodeName === 'polygon') {
       const path = event.target
       path.setAttribute('fill', currentColor)
     }
@@ -59,16 +101,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 //colour-palette buttons
-colourPalette.forEach(colour => {
-  const buttonEl = document.createElement('button')
-  buttonEl.className = 'palette-button'
-  buttonEl.value = colour
-  buttonEl.style = `background: ${colour};`
-  buttonContainer.append(buttonEl)
-})
-buttonContainer.addEventListener('click', event => {
-  currentColor = event.target.value
-})
+// colourPalette.forEach(colour => {
+//   const buttonEl = document.createElement('button')
+//   buttonEl.className = 'palette-button'
+//   buttonEl.value = colour
+//   buttonEl.style = `background: ${colour};`
+//   buttonContainer.append(buttonEl)
+// })
+// buttonContainer.addEventListener('click', event => {
+//   currentColor = event.target.value
+// })
+
+paletteSelection.forEach(palette => {console.log(palette.colours.forEach(colour => {
+    const buttonEl = document.createElement('button')
+    buttonEl.className = 'palette-button'
+    buttonEl.value = colour
+    buttonEl.style = `background: ${colour};`
+    buttonContainer.append(buttonEl)
+  buttonContainer.addEventListener('click', event => {
+    currentColor = event.target.value
+  })
+
+}))})
+//
+//   colour => {
+
 
 
   //svg to png iamge conversion
@@ -84,7 +141,8 @@ buttonContainer.addEventListener('click', event => {
         // window.open(dataUrl);
         const img = new Image()
         img.src = imageData
-        document.getElementById('here-appear-theimages').appendChild(img)
+        document.getElementById('here-appear-theimages').innerHTML = `
+        Your drawing has been saved and added to the gallery!`
         saveImage(imageName.value, authorName.value, imageData)
       })
       .catch(function (error) {
