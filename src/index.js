@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const templateContainer = document.querySelector('#template-header')
   const imageContainer = document.querySelector('#image-container')
   const buttonContainer = document.querySelector('#button-container')
+  const drawingContainer = document.querySelector('#drawing-container')
+  let currentColorButton = document.querySelector('#current-color')
   let currentColor
+
   const colourPalette = [
     "#001f3f",
     "#001f3f",
@@ -51,11 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
   "#66c2a5",
   "#3288bd",
   "#5e4fa2"]}]
-
-
-
-
-
 
 
 
@@ -118,8 +116,11 @@ paletteSelection.forEach(palette => {console.log(palette.colours.forEach(colour 
     buttonEl.value = colour
     buttonEl.style = `background: ${colour};`
     buttonContainer.append(buttonEl)
-  buttonContainer.addEventListener('click', event => {
+
+    buttonContainer.addEventListener('click', event => {
     currentColor = event.target.value
+    
+    currentColorButton.style = `background: ${currentColor};`
   })
 
 }))})

@@ -165,3 +165,19 @@ body {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #36486b;}
+
+
+#current-color {
+  width: 20%;
+  min-height: 50px;
+  margin: 5px;
+  border-radius: 12px;
+}
+
+#here-appear-theimages {
+  display: flex;
+  flex-flow: row wrap;
+  column-count: 3;
+}
+
+#gallery-image {width: 400px;height: auto;flex-flow: row wrap;}

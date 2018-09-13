@@ -13,9 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function appendImage (image) {
     const imageDisplayDiv = document.createElement('div')
     imageDisplayDiv.innerHTML =
-    `<h3>${image.name}</h3>
+    `
+    <img id="gallery-image" src=${image.image_file}>
+    <h2>${image.name}</h2>
     <h4>By: ${image.author}</h4>
-    <img src=${image.image_file}>
     `
     imageDiv.appendChild(imageDisplayDiv)
   }
