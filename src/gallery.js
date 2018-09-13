@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `
     <img id="gallery-image" src=${image.image_file}>
     <h2>${image.name}</h2>
-    <h4>By: ${image.author}</h4>
+    <h4>${image.author}</h4>
     `
     imageDiv.appendChild(imageDisplayDiv)
   }

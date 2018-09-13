@@ -4,28 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const imageContainer = document.querySelector('#image-container')
   const buttonContainer = document.querySelector('#button-container')
   const drawingContainer = document.querySelector('#drawing-container')
+  const selectFilter = document.querySelector('#level-filter')
   let currentColorButton = document.querySelector('#current-color')
   let currentColor
+  let allTemplates
+  let levelFilter = "All"
 
-  const colourPalette = [
-    "#001f3f",
-    "#001f3f",
-    "#7FDBFF",
-    "#39CCCC",
-    "#3D9970",
-    "#2ECC40",
-    "#01FF70",
-    "#FFDC00",
-    "#FF851B",
-    "#FF4136",
-    "#85144b",
-    "#F012BE",
-    "#B10DC9",
-    "#111111",
-    "#AAAAAA",
-    "#DDDDDD",
-    "#fff"
-  ]
+
   const paletteSelection = [{name: 'Standard', colours: ["#001f3f",
   "#001f3f",
   "#7FDBFF",
@@ -62,9 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
   function getTemplates () {
     return fetch(endPoint)
     .then(resp => resp.json())
-    .then(templates => templates.forEach(template => appendTemplate(template)))
+    .then(templates => {
+      renderSomeTemplates(templates)
+      allTemplates = templates
+    })
   }
+
   getTemplates()
+
+  function clearTemplatesFromPage() {
+    templateContainer.innerHTML = ""
+  }
+
+  function renderSomeTemplates(templates) {
+      templates.forEach(appendTemplate)
+  }
+
 
   function appendTemplate (template) {
     const templateEl = document.createElement('div')
@@ -110,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //   currentColor = event.target.value
 // })
 
-paletteSelection.forEach(palette => {console.log(palette.colours.forEach(colour => {
+paletteSelection.forEach(palette => {palette.colours.forEach(colour => {
     const buttonEl = document.createElement('button')
     buttonEl.className = 'palette-button'
     buttonEl.value = colour
@@ -119,13 +117,28 @@ paletteSelection.forEach(palette => {console.log(palette.colours.forEach(colour 
 
     buttonContainer.addEventListener('click', event => {
     currentColor = event.target.value
-    
+
     currentColorButton.style = `background: ${currentColor};`
   })
 
-}))})
-//
-//   colour => {
+})})
+
+// dropdown levelFilter
+
+  selectFilter.addEventListener('change',(event) => {
+    levelFilter = event.target.value
+    clearTemplatesFromPage()
+    renderSomeTemplates(
+        allTemplates.filter(template =>  {
+          if (levelFilter === "All") {
+            return true }
+          else {
+            return template.level === levelFilter }
+        })
+
+
+    )
+  })
 
 
 
