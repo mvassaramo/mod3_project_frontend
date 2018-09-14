@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   imageContainer.addEventListener('click', event => {
-    if (event.target.nodeName === 'path' || event.target.nodeName === 'polygon') {
+    if (event.target.nodeName === 'path' || event.target.nodeName === 'polygon' || event.target.nodeName === 'circle') {
       const path = event.target
       path.setAttribute('fill', currentColor)
     }
